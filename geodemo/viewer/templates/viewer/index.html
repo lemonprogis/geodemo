@@ -1,93 +1,11 @@
-    {% extends 'viewer/base.html' %}
-    {% load staticfiles %}
-    {% load url from future %}
-    {% block title %}PACE | Viewer{% endblock %}
+{% extends 'viewer/base.html' %}
+{% load staticfiles %}
+{% block title %}GeoDemo | Sample App with Leaflet and GeoDjango{% endblock %}
 
-    {% block content %}
-    <div id="map">
-    </div>
-    <div id="wrapper">
-      <div id="sidebar-wrapper">
-        <div class="sidebar-nav">
-          <div class="row">
-            <h2><img src="{% static "imgs/INT_lds_rgb_wht_rev.png" %}" class="large-logo"></h2>
-            <div class="col-md-12 search-field">
-             <p>County: </p>
-             <select name="cnty" id="cnty" class="cnty-dd form-control">
-	      <option value="NQ">Filter County</option>
-              {% for cnty in cntys %}
-                <option value="{{ cnty.co_no }}">{{ cnty.county_name|title }}</option>
-              {% endfor %}
-            </select>
-          </div>
-          <div class="col-md-12 search-field">
-           <p>City: </p>
-           <select name="city" id="city" class="city-dd form-control">
-           </select>
-         </div>
-         <div class="col-md-12 search-field filter-area">
-          <select name="prop-type" id="prop-type" class='form-control qf'>
-            <option value="all">Property Type (optional)</option>
-            <option value="call">All Commercial</option>
-            <option value="rall">All Residential</option>
-            {% for uc in ucs %}
-              <option value="{{ uc }}">{{ uc }}</option>
-            {% endfor %}
-          </select>
-        </div>
-        <div class="col-md-12 search-field filter-area">
-         <select name="q-field" id="q-field" class='form-control qf'>
-          <option value="NQ">Filter Fields (optional)</option>
-          <option value="just_value">Just Value</option>
-          <option value="act_yr_blt">Actual Year Built</option>
-          <option value="eff_yr_blt">Effectives Year Built</option>
-          <option value="tot_lvg_ar">Total Living Area (sq ft)</option>
-        </select>
-      </div>
-      <div class="col-md-12">
-        <select name="opt" id="opt" class='form-control'>
-         <option value="eq">=</option>
-         <option value="gt">&gt;</option>
-         <option value="gte">&ge;</option>
-         <option value="lt">&lt;</option>
-         <option value="lte">&le;</option>
-       </select>
-     </div>
-     <div class="col-md-12 filter-area">
-      <input type="text" id="val" name="val" class="form-control">
-    </div>
-    <div class="col-md-12 search-field">
-      <button class="btn btn-primary" id="search-button">Search</button>&nbsp;&nbsp;&nbsp;&nbsp;
-      <!--<button class="btn btn-danger" id="clear-button">Clear</button>&nbsp;&nbsp;&nbsp;&nbsp;-->
-      <button class="btn btn-danger" id="clear-all-data-btn">Clear All</button>&nbsp;&nbsp;&nbsp;&nbsp;
-      <span id="feature-count"></span>
-      <h4><a href="#" onclick="toggleLegend();">Legend</a></h4>
-      <ul class="list-unstyled legend-sidebar">
-        <li><span style="color:#3399FF;">Residential</span></li>
-        <li><span style="color:#FFFF00;">Commercial</span></li>
-      </ul>
-    </div>
-    <div class="col-md-12 search-field">
-      <p>
-        The county data presented in this application has been collected from county assessors, tax collectors, and the states GIS department. It is being pre filtered to only include properties that are of Use Code Residential with a Just Value of greater than $50,000 or Use Code Commercial with a Just Value of greater than $250,000. The properties have had 0 Tax Lein Certificates or Tax Lein Certificates older than 3 years of current year and the Land Value is less than 30% of the Just Value of the property. 
-      </p>
-    </div>
+{% block content %}
+  <div id="mapid" style="width: 100%; height: 600px;"></div>
+  <br>
+  <div class="actions">
+  	<button id="addWeatherStations">Add Weather Stations</button>
   </div>
-</div>
-</div>
-<!-- Page Content -->
-<div id="page-content-wrapper">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-lg-12">
-        <div id="map"></div>
-        <button id="search-btn" role="button" class="btn">Toggle Search</button>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- /#page-content-wrapper -->
-</div>
-<script src="{% static "js/site.js" %}">
-</script>
 {% endblock %}
