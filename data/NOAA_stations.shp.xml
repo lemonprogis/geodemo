@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<metadata>
+	<idinfo>
+		<citation><citeinfo>
+				<origin>Conservation Biology Institute</origin><origin>NOAA</origin><origin>NCDC</origin>
+				<pubdate>8/6/2010</pubdate>
+				<title>NOAA, NCDC - Weather stations</title>
+				<pubinfo><pubdate></pubdate>
+					<pubplace/>
+					<publish></publish>
+				</pubinfo>
+				<othercit></othercit></citeinfo>
+			<citeinfo/><citeinfo/></citation>
+		<descript>
+			<abstract>Reference showing the station ID's and information for each station in
+
+the Federal Climate Complex ISH global database. ISH is a worldwide
+
+database of hourly and synoptic data, derived from TD9956 (DATSAV3
+
+global hourly), TD3280 (US hourly), and TD3240 (US hourly precipitation).</abstract>
+			<purpose></purpose>
+			<supplinf></supplinf>
+		</descript>
+		<timeperd><timeinfo><current/></timeinfo>
+			<current>publication date</current><timeinfo/><timeinfo/></timeperd>
+		<keywords>
+			<theme><themekey>climate</themekey><themekey>weather stations</themekey><themekey>uncertainty</themekey><themekey>NOAA</themekey><themekey>NCDC</themekey><themekt>Data Basin tags</themekt></theme></keywords>
+		<accconst>None</accconst>
+		<useconst>&lt;a rel="license" style="float:right;" href="http://creativecommons.org/licenses/by/3.0/" target="_blank"&gt;&lt;img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png" /&gt;&lt;/a&gt;This work is licensed under a &lt;a rel="license" href="http://creativecommons.org/licenses/by/3.0/" target="_blank"&gt;Creative Commons Attribution 3.0 License&lt;/a&gt;.</useconst>
+		<ptcontac>
+			<cntinfo>
+				<cntperp><cntper>Climate Services Branch</cntper><cntorg></cntorg></cntperp>
+				<cntemail>ncdc.questions@noaa.gov</cntemail>
+			</cntinfo>
+			<cntinfo/><cntinfo/></ptcontac>
+		<datacred>Dataset developed by Nikolas Stevenson-Molnar and Wendy Peterman at Conservation Biology Institute, August 6, 2010 from a list of stations found at: http://www.ncdc.noaa.gov/oa/climate/surfaceinventories.html#gis</datacred>
+		<status><progress>Complete</progress><update>None Planned</update></status><spdom><bounding/><bounding/></spdom></idinfo>
+	<dataqual>
+		<attracc><attraccr></attraccr></attracc><complete></complete></dataqual>
+	<spdoinfo/>
+	<spref>
+		<horizsys>
+			<geograph><latres>0</latres><longres>0</longres><geogunit>Decimal degreees</geogunit></geograph>
+			<geodetic>
+				<horizdn>D_WGS_1984</horizdn><ellips>WGS_1984</ellips><semiaxis>6378137.000000</semiaxis><denflat>298.257224</denflat>
+			</geodetic>
+		</horizsys>/n</spref>
+	<eainfo>
+		<detailed>
+			<enttyp>
+				<enttypl>D:\Wendy Tier 1\stations\NOAA_stations</enttypl>/n<enttypd/>/n<enttypds/>
+			</enttyp><attr>
+				<attrlabl>OBJECTID</attrlabl>
+				<attrdef>OBJECTID</attrdef>
+				<attrdefs/>
+				<attalias>OBJECTID</attalias><attrdomv/></attr>
+			<attr>
+				<attrlabl>USAF</attrlabl>
+				<attrdef>Air Force Datsav3 station number</attrdef>
+				<attrdefs>Conservation Biology Institute</attrdefs>
+				<attalias>USAF</attalias><attrdomv/></attr>
+			<attr>
+				<attrlabl>WBAN</attrlabl>
+				<attrdef>NCDC WBAN number</attrdef>
+				<attrdefs>Conservation Biology Institute</attrdefs>
+				<attalias>WBAN</attalias><attrdomv/></attr>
+			<attr>
+				<attrlabl>STATION_NA</attrlabl>
+				<attrdef>Station Name</attrdef>
+				<attrdefs/>
+				<attalias>STATION_NA</attalias><attrdomv/></attr>
+			<attr>
+				<attrlabl>CTRY</attrlabl>
+				<attrdef>WMO historical country ID, followed by FIPS country ID</attrdef>
+				<attrdefs>Conservation Biology Institute</attrdefs>
+				<attalias>CTRY</attalias><attrdomv/></attr>
+			<attr>
+				<attrlabl>ST</attrlabl>
+				<attrdef>State for US stations</attrdef>
+				<attrdefs/>
+				<attalias>ST</attalias><attrdomv/></attr>
+			<attr>
+				<attrlabl>CALL</attrlabl>
+				<attrdef>ICAO call sign</attrdef>
+				<attrdefs>Conservation Biology Institute</attrdefs>
+				<attalias>CALL</attalias><attrdomv/></attr>
+			<attr>
+				<attrlabl>LAT</attrlabl>
+				<attrdef>Latitude in thousandths of decimal degrees</attrdef>
+				<attrdefs>Conservation Biology Institute</attrdefs>
+				<attalias>LAT</attalias><attrdomv/></attr>
+			<attr>
+				<attrlabl>LON</attrlabl>
+				<attrdef>Longitude in thousandths of decimal degrees</attrdef>
+				<attrdefs>Conservation Biology Institute</attrdefs>
+				<attalias>LON</attalias><attrdomv/></attr>
+			<attr>
+				<attrlabl>ELEV</attrlabl>
+				<attrdef>Elevation in tenths of meters</attrdef>
+				<attrdefs>Conservation Biology Institute</attrdefs>
+				<attalias>ELEV</attalias><attrdomv/></attr>
+			<attr><attrlabl>FID</attrlabl><attalias>FID</attalias><attrdef/><attrdomv/></attr><attr><attrlabl>Shape</attrlabl><attalias>Shape</attalias><attrdef/><attrdomv/></attr></detailed>
+	</eainfo>
+	<distinfo>
+	</distinfo>
+	<metainfo>
+		<metd/>
+		<metc>
+			<cntinfo>
+				<cntperp><cntper/><cntorg/></cntperp>
+				<cntpos/>
+			</cntinfo>
+		</metc>
+		<metstdn/>
+		<metstdv/>
+	</metainfo>
+	<Esri><CreaDate>20100806</CreaDate><CreaTime>10501300</CreaTime><SyncOnce>TRUE</SyncOnce><ArcGISFormat>1.0</ArcGISFormat><DataProperties><lineage><Process ToolSource="C:\Program Files (x86)\ArcGIS\Server10.0\ArcToolbox\Toolboxes\Data Management Tools.tbx\Project" Date="20100806" Time="104727">Project D:\arcgisserver\services\im\de8f7f71e3334eba863ff6003484364f\data\NOAA_stations\NOAA_stations.shp D:\arcgisserver\services\im\de8f7f71e3334eba863ff6003484364f\data\NOAA_stations\p_NOAA_stations.shp PROJCS['WGS_1984_Web_Mercator_Auxiliary_Sphere',GEOGCS['GCS_WGS_1984',DATUM['D_WGS_1984',SPHEROID['WGS_1984',6378137.0,298.257223563]],PRIMEM['Greenwich',0.0],UNIT['Degree',0.0174532925199433]],PROJECTION['Mercator_Auxiliary_Sphere'],PARAMETER['False_Easting',0.0],PARAMETER['False_Northing',0.0],PARAMETER['Central_Meridian',0.0],PARAMETER['Standard_Parallel_1',0.0],PARAMETER['Auxiliary_Sphere_Type',0.0],UNIT['Meter',1.0]] # GEOGCS['GCS_WGS_1984',DATUM['D_WGS_1984',SPHEROID['WGS_1984',6378137.0,298.257223563]],PRIMEM['Greenwich',0.0],UNIT['Degree',0.0174532925199433]]</Process></lineage><itemProps><itemLocation><linkage Sync="TRUE">file://\\IP-0AC37220\D\arcgisserver\services\im\de8f7f71e3334eba863ff6003484364f\de8f7f71e3334eba863ff6003484364f\commonData\Data0\NOAA_stations</linkage><protocol Sync="TRUE">Local Area Network</protocol></itemLocation></itemProps><copyHistory><copy source="C:\Users\ARCGIS~1\AppData\Local\Temp\temp610273199497497701557462265723193464\data\NOAA_stations\NOAA_stations" dest="\\IP-0AC37220\D\arcgisserver\services\im\de8f7f71e3334eba863ff6003484364f\de8f7f71e3334eba863ff6003484364f\commonData\Data0\NOAA_stations" date="20100806" time="10501300"></copy></copyHistory></DataProperties></Esri></metadata>

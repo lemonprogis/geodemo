@@ -1,0 +1,49 @@
+{% extends 'main/base.html' %}
+{% load staticfiles %}
+{% load url from future %}
+{% block title %}Whiteboard | Home{% endblock%}
+{% block content %}
+	<div class="row">
+		<div class="col-md-12">
+				<div class="col-md-1">
+					<p>Filter: </p>
+				</div>
+				<div class="col-md-1">
+					<a href="/home/latest">Latest</a>
+				</div>
+				<div class="col-md-2">
+					<a href="/home/">Oldest</a>
+				</div>
+		</div>
+	</div>
+	{% for msg in messages%}
+	<div class="row">
+		<div class="col-md-2">
+			<p>{{msg.datetime }}</p>
+		</div>
+		<div class="col-md-10">
+			<h4><a href="/whiteboard/{{msg.pk}}">{{ msg.title}}</a></h4>
+			<p>Posted by: <a href="/whiteboard/users/{{msg.user.username}}">{{msg.user.username}}</a> Language: <a href="/whiteboard/filter/{{msg.language}}">{{msg.language}}</a></p>
+		</div>
+	</div>
+	{% endfor %}
+	<div class="row">
+		<div class="col-md-6">
+			<div class="pagination">
+		    <span class="step-links">
+		        {% if messages.has_previous %}
+		            <a href="?page={{ messages.previous_page_number }}">previous</a>
+		        {% endif %}
+
+		        <span class="current">
+		            Page {{ messages.number }} of {{ messages.paginator.num_pages }}.
+		        </span>
+
+		        {% if messages.has_next %}
+		            <a href="?page={{ messages.next_page_number }}">next</a>
+		        {% endif %}
+		    </span>
+			</div>
+		</div>
+	</div>
+{% endblock %}

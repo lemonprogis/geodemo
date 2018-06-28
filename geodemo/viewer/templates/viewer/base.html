@@ -1,0 +1,128 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{%block title %}{% endblock%}</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=9" />
+        <meta name=viewport content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.0.3/css/buttons.dataTables.min.css">
+        <link rel="stylesheet" href="{% static "css/whiteboard.css" %}">
+        <link rel="stylesheet" href="{% static "leaflet/leaflet.css" %}" />
+        <link rel="stylesheet" href="{% static "css/MarkerCluster.css" %}" />
+        <link rel="stylesheet" href="{% static "css/MarkerCluster.Default.css" %}" />
+        <link rel="stylesheet" href="{% static "css/leidos-skin.css" %}" />
+        <link rel="stylesheet" href="{% static "css/bootstrap-sidebar.css" %}" />
+        
+        {% block extra_css %}
+        {% endblock %}
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <style type="text/css">
+          /*body { overflow: hidden; }*/
+
+          .navbar-offset { margin-top: 50px; }
+          #map { position: absolute; top: 50px; bottom: 0px; left: 0px; right: 0px; }
+          #map .ol-zoom { font-size: 1.2em; }
+          #map { z-index: 35; }
+
+           .search-field {
+                padding: 5px;
+              }
+
+          .number_range_filter{
+            width:50px;
+          }
+        </style>
+        <!-- jquery -->
+        <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+        <!-- leaflet -->
+        <script src="{% static "leaflet/leaflet.js" %}"></script>
+        <script src="{% static "js/l.control.geosearch.js" %}"></script>
+        <script src="{% static "js/l.geosearch.provider.google.js" %}"></script>
+        <link rel="stylesheet" href="{% static "css/l.geosearch.css" %}" />
+        <script src="{% static "js/leaflet.markercluster-src.js" %}"></script>
+        <script src="{% static "js/leaflet.spin.js" %}"></script>
+        <script src="{% static "js/spin.min.js" %}"></script>
+        <script src="{% static "js/esri-leaflet.js" %}"></script>
+        <script src="{% static "js/L.Control.Button.js" %}"></script>
+         {%block extra_js %}
+        {% endblock %}
+    </head>
+    <body>
+        <div class="navbar  navbar-custom navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">
+            PACE Viewer
+          </a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/viewer/">Viewer</a></li>
+            <li><a href="/viewer/prop-search/">Property Search</a></li>
+            <li><a href="/about/">About</a></li>
+          </ul>
+          {% if user.is_authenticated %}
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                {% if user.first_name %}
+                <a href="">Welcome, {{ user.first_name }}</a>
+                {% else %}
+                <a href=""> Welcome, {{ user.username }}</a>
+                {% endif %}
+              </li> 
+              <li>  
+                <button onclick="window.location.href='/logout/'" class="btn btn-danger">Logout</button>
+              </li>
+            </ul>
+          {% else %}
+          <form class="navbar-form navbar-right" role="form" method="post" action="/login/">
+            {% csrf_token %}
+            <div class="form-group">
+              <input type="text" placeholder="Username" name="username" id="username" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="Password" name="password" id="password" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Login</button>
+          </form>
+          {% endif %}
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+            {% block content%}
+            {% endblock %}
+		<div id="footer">
+			  <footer>
+        <p>&copy; Florida PACE <script>document.write(new Date().getFullYear())</script></p>
+      </footer>
+			</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <!-- datatables -->
+    <script src="https://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.0.3/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.0.3/js/buttons.html5.min.js"></script>
+    <script src="{% static "js/jquery.dataTables.columnFilter.js" %}"></script>
+    {% block my_js %}
+    {% endblock %}
+    </body>
+</html>
